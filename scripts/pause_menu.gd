@@ -11,7 +11,7 @@ func _ready():
 
 #warning-ignore:unused_argument
 func _input(event):
-	global = get_node("/root/Global")
+	global = $"/root/Global"
 	if Input.is_action_pressed("pause") and not paused:
 		global.pause()
 		paused = true
@@ -20,18 +20,18 @@ func _input(event):
 		paused = false
 
 func _on_Resume_Button_pressed():
-	global = get_node("/root/Global")
+	global = $"/root/Global"
 	global.resume()
 
 func _on_Quit_Button_pressed():
-	global = get_node("/root/Global")
+	global = $"/root/Global"
 	global.quit()
 
 func _on_Restart_Button_pressed():
-	global = get_node("/root/Global")
+	global = $"/root/Global"
 	global.restart()
 
 func _on_Main_Menu_Button_pressed():
-	global = get_node("/root/Global")
+	global = $"/root/Global"
 	global.go_to_main_menu()
 

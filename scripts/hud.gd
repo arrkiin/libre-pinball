@@ -3,7 +3,7 @@
 
 extends Control
 
-var global
+onready var global = $"/root/Global"
 
 var show_fps = false
 
@@ -13,17 +13,16 @@ func _ready():
 
 #warning-ignore:unused_argument
 func _physics_process(delta):
-	global = get_node("/root/Global")
 	var fps = Performance.get_monitor(Performance.TIME_FPS)
 	if show_fps:
 		# Show FPS counter:
-		get_node("Frames per Second").set_text(str(fps) + " FPS")
+		$"Frames per Second".set_text(str(fps) + " FPS")
 	else:
 		# Show nothing:
-		get_node("Frames per Second").set_text("")
+		$"Frames per Second".set_text("")
 
-	get_node("Score").set_text(str(global.score))
-	get_node("Lives").set_text(str(global.lives))
+	$Score.set_text(str(global.score))
+	$Lives.set_text(str(global.lives))
 
 #warning-ignore:unused_argument
 func _input(event):

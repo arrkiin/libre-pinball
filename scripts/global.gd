@@ -32,10 +32,10 @@ func reset_game_state():
 
 func pause():
 	get_tree().set_pause(true)
-	get_node("/root/Table 1/Pause Menu").show()
+	$"/root/Table 1/Pause Menu".show()
 
 func resume():
-	get_node("/root/Table 1/Pause Menu").hide()
+	$"/root/Table 1/Pause Menu".hide()
 	get_tree().set_pause(false)
 
 func quit():

@@ -3,10 +3,9 @@
 
 extends Control
 
-onready var global = get_node("/root/Global")
+onready var global = $"/root/Global"
 
 func _ready():
-	global = get_node("/root/Global")
 	print(tr("main_menu_loaded"))
 	global.table_window_title("Main Menu")
 
@@ -17,6 +16,5 @@ func _on_Play_Button_pressed():
 	# TODO: Level selection, several tables
 
 func _on_Quit_Button_pressed():
-	global = get_node("/root/Global")
-	get_node("/root/Global").quit()
+	global.quit()
 

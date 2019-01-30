@@ -3,14 +3,13 @@
 
 extends StaticBody2D
 
-var global
+onready var global = $"/root/Global"
 
 # Color timer: change the blue color value over time to create some animation
 var color_timer = 0.25
 var color_timer_increment = true
 
 func _ready():
-	
 	set_physics_process(true)
 
 #warning-ignore:unused_argument
@@ -30,11 +29,10 @@ func _physics_process(delta):
 	else:
 		color_timer -= 0.01
 
-	get_node("Polygon2D").set_color(Color(1, 1, color_timer))
+	$Polygon2D.set_color(Color(1, 1, color_timer))
 
 #warning-ignore:unused_argument
 func _on_Area2D_body_enter(body):
-	global = get_node("/root/Global")
 	global.score += 100
 	if global.score > 0:
 		$SamplePlayer.play()
