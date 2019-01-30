@@ -11,8 +11,10 @@ func _ready():
 	global.table_window_title("Main Menu")
 
 func _on_Play_Button_pressed():
-	# TODO: Level selection, several tables
+	#warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/table_1.tscn")
+	
+	# TODO: Level selection, several tables
 
 func _on_Quit_Button_pressed():
 	global = get_node("/root/Global")

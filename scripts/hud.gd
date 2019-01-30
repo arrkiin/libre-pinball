@@ -11,6 +11,7 @@ func _ready():
 	set_process_input(true)
 	set_physics_process(true)
 
+#warning-ignore:unused_argument
 func _physics_process(delta):
 	global = get_node("/root/Global")
 	var fps = Performance.get_monitor(Performance.TIME_FPS)
@@ -24,6 +25,7 @@ func _physics_process(delta):
 	get_node("Score").set_text(str(global.score))
 	get_node("Lives").set_text(str(global.lives))
 
+#warning-ignore:unused_argument
 func _input(event):
 	if Input.is_action_pressed("toggle_fps_display") and not show_fps:
 		show_fps = true

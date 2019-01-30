@@ -20,6 +20,7 @@ func _ready():
 	pos_x = get_position().x
 	pos_y = get_position().y
 
+#warning-ignore:unused_argument
 func _physics_process(delta):
 	# Cap Y offset values:
 	if push >= 4:

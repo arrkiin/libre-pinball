@@ -9,6 +9,7 @@ var paused = false
 func _ready():
 	set_process_input(true)
 
+#warning-ignore:unused_argument
 func _input(event):
 	global = get_node("/root/Global")
 	if Input.is_action_pressed("pause") and not paused:

@@ -1,132 +1,74 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://resources/fira_sans.font" type="BitmapFont" id=2]
 
 [node name="Pause Menu" type="Control"]
-
 pause_mode = 2
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags_horizontal = 1
-size_flags_vertical = 1
-margin_left = 0.0
-margin_top = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
-mouse_filter = 0
 
 [node name="Pause Label" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags_horizontal = 1
-size_flags_vertical = 0
 margin_left = 96.0
 margin_top = 32.0
 margin_right = 256.0
 margin_bottom = 96.0
+mouse_filter = 1
+size_flags_vertical = 0
 custom_fonts/font = ExtResource( 2 )
 text = "pause"
 align = 1
 valign = 1
 uppercase = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-mouse_filter = 1
 
 [node name="Resume Button" type="Button" parent="."]
-
-hint_tooltip = "resume_tooltip"
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags_horizontal = 1
-size_flags_vertical = 1
 margin_left = 96.0
 margin_top = 128.0
 margin_right = 256.0
 margin_bottom = 192.0
+hint_tooltip = "resume_tooltip"
 custom_fonts/font = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
 text = "resume"
-flat = false
-mouse_filter = 0
 
 [node name="Quit Button" type="Button" parent="."]
-
 anchor_right = 1.0
 anchor_bottom = 1.0
-hint_tooltip = "quit_tooltip"
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags_horizontal = 1
-size_flags_vertical = 1
 margin_left = 96.0
 margin_top = 512.0
 margin_right = 216.0
 margin_bottom = 536.0
+hint_tooltip = "quit_tooltip"
 custom_fonts/font = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
 text = "quit"
-flat = false
-mouse_filter = 0
 
 [node name="Restart Button" type="Button" parent="."]
-
 anchor_right = 1.0
 anchor_bottom = 1.0
-hint_tooltip = "restart_tooltip"
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags_horizontal = 1
-size_flags_vertical = 1
 margin_left = 96.0
 margin_top = 256.0
 margin_right = 216.0
 margin_bottom = 280.0
+hint_tooltip = "restart_tooltip"
 custom_fonts/font = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
 text = "restart"
-flat = false
-mouse_filter = 0
 
 [node name="Main Menu Button" type="Button" parent="."]
-
 anchor_right = 1.0
 anchor_bottom = 1.0
-hint_tooltip = "go_to_main_menu_tooltip"
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags_horizontal = 1
-size_flags_vertical = 1
 margin_left = 96.0
 margin_top = 384.0
 margin_right = 216.0
 margin_bottom = 408.0
+hint_tooltip = "go_to_main_menu_tooltip"
 custom_fonts/font = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
 text = "go_to_main_menu"
-flat = false
 clip_text = true
-mouse_filter = 0
 
-[connection signal="pressed" from="Resume Button" to="." method="_on_Resume_Button_pressed" binds=[  ]]
-
-[connection signal="pressed" from="Quit Button" to="." method="_on_Quit_Button_pressed" binds=[  ]]
-
-[connection signal="pressed" from="Restart Button" to="." method="_on_Restart_Button_pressed" binds=[  ]]
-
-[connection signal="pressed" from="Main Menu Button" to="." method="_on_Main_Menu_Button_pressed" binds=[  ]]
+[connection signal="pressed" from="Resume Button" to="." method="_on_Resume_Button_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_Quit_Button_pressed"]
+[connection signal="pressed" from="Restart Button" to="." method="_on_Restart_Button_pressed"]
+[connection signal="pressed" from="Main Menu Button" to="." method="_on_Main_Menu_Button_pressed"]

@@ -13,6 +13,7 @@ func _ready():
 	
 	set_physics_process(true)
 
+#warning-ignore:unused_argument
 func _physics_process(delta):
 	# If the `color_timer` reached 1, start decrementing
 	if color_timer >= 1:
@@ -31,6 +32,7 @@ func _physics_process(delta):
 
 	get_node("Polygon2D").set_color(Color(1, 1, color_timer))
 
+#warning-ignore:unused_argument
 func _on_Area2D_body_enter(body):
 	global = get_node("/root/Global")
 	global.score += 100

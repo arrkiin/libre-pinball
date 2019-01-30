@@ -8,12 +8,15 @@ var ball
 var hud
 
 var timer = 0
+#warning-ignore:unused_class_variable
 var pos_x
+#warning-ignore:unused_class_variable
 var pos_y
 
 func _ready():
 	set_physics_process(true)
 
+#warning-ignore:unused_argument
 func _physics_process(delta):
 	# Prevent the ball from being reset while the game is started:
 	timer += 1
@@ -21,6 +24,7 @@ func _physics_process(delta):
 	if timer >= 10:
 		timer = 10
 
+#warning-ignore:unused_argument
 func _on_Bottom_Area_body_enter(area):
 	global = get_node("/root/Global")
 	ball = get_node("../Ball/RigidBody2D")

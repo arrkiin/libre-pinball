@@ -14,6 +14,7 @@ func _ready():
 	set_physics_process(true)
 	set_process_input(true)
 
+#warning-ignore:unused_argument
 func _physics_process(delta):
 	# Cap rotation values:
 	if rotation >= 0.3:
