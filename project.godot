@@ -22,7 +22,7 @@ target_fps=60
 
 [autoload]
 
-Global="res://scripts/global.gd"
+Global="*res://scripts/global.gd"
 
 [display]
 

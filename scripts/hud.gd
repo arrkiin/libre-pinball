@@ -3,8 +3,6 @@
 
 extends Control
 
-onready var global = $"/root/Global"
-
 var show_fps = false
 
 func _ready():
@@ -21,8 +19,8 @@ func _physics_process(delta):
 		# Show nothing:
 		$"Frames per Second".set_text("")
 
-	$Score.set_text(str(global.score))
-	$Lives.set_text(str(global.lives))
+	$Score.set_text(str(Global.score))
+	$Lives.set_text(str(Global.lives))
 
 #warning-ignore:unused_argument
 func _input(event):

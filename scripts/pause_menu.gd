@@ -3,35 +3,28 @@
 
 extends Control
 
-var global
 var paused = false
 
 func _ready():
 	set_process_input(true)
 
-#warning-ignore:unused_argument
 func _input(event):
-	global = $"/root/Global"
-	if Input.is_action_pressed("pause") and not paused:
-		global.pause()
+	if event.is_action_pressed("pause") and not paused:
+		Global.pause()
 		paused = true
-	elif Input.is_action_pressed("pause") and paused:
-		global.resume()
+	elif event.is_action_pressed("pause") and paused:
+		Global.resume()
 		paused = false
 
 func _on_Resume_Button_pressed():
-	global = $"/root/Global"
-	global.resume()
+	Global.resume()
 
 func _on_Quit_Button_pressed():
-	global = $"/root/Global"
-	global.quit()
+	Global.quit()
 
 func _on_Restart_Button_pressed():
-	global = $"/root/Global"
-	global.restart()
+	Global.restart()
 
 func _on_Main_Menu_Button_pressed():
-	global = $"/root/Global"
-	global.go_to_main_menu()
+	Global.go_to_main_menu()
 

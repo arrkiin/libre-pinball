@@ -10,8 +10,6 @@ var score = -700
 var lives = 3
 
 func _ready():
-	# 125 FPS physics:
-#	OS.set_iterations_per_second(125)
 
 	print("Libre Pinball [0.0.5]")
 	set_process_input(true)

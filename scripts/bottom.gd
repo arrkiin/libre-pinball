@@ -3,7 +3,6 @@
 
 extends Node2D
 
-onready var global = $"/root/Global"
 var hud
 
 var timer = 0
@@ -26,15 +25,15 @@ func _physics_process(delta):
 #warning-ignore:unused_argument
 func _on_Bottom_Area_body_enter(area):
 	var ball = get_parent().ball
-	global.lives -= 1
+	Global.lives -= 1
 	# "Life lost" sound:
 	$AudioStreamPlayer.play()
 
 	# The player still has lives:
-	if timer >= 10 and global.lives > 0:
+	if timer >= 10 and Global.lives > 0:
 		# Reset ball position and velocity:
 		ball.reset = true
-		print(tr("life_lost") + " " + str(global.lives))
+		print(tr("life_lost") + " " + str(Global.lives))
 
 	# The player has no lives anymore, show the Game Over screen:
 	elif timer >= 10:

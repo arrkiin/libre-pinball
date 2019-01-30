@@ -3,8 +3,6 @@
 
 extends StaticBody2D
 
-onready var global = $"/root/Global"
-
 # Color timer: change the blue color value over time to create some animation
 var color_timer = 0.25
 var color_timer_increment = true
@@ -33,7 +31,7 @@ func _physics_process(delta):
 
 #warning-ignore:unused_argument
 func _on_Area2D_body_enter(body):
-	global.score += 100
-	if global.score > 0:
+	Global.score += 100
+	if Global.score > 0:
 		$SamplePlayer.play()
 

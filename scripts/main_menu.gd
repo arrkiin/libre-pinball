@@ -3,11 +3,9 @@
 
 extends Control
 
-onready var global = $"/root/Global"
-
 func _ready():
 	print(tr("main_menu_loaded"))
-	global.table_window_title("Main Menu")
+	Global.table_window_title("Main Menu")
 
 func _on_Play_Button_pressed():
 	#warning-ignore:return_value_discarded
@@ -16,5 +14,5 @@ func _on_Play_Button_pressed():
 	# TODO: Level selection, several tables
 
 func _on_Quit_Button_pressed():
-	global.quit()
+	Global.quit()
 
