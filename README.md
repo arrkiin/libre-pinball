@@ -1,6 +1,6 @@
 # Libre Pinball
 
-A free/libre pinball game made with Godot.
+A free/libre pinball game made with **Godot 3**.
 
 **Work in progress.**
 
