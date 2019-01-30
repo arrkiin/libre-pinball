@@ -3,7 +3,7 @@
 
 extends Control
 
-var global = get_node("/root/Global")
+onready var global = get_node("/root/Global")
 
 func _ready():
 	global = get_node("/root/Global")
@@ -12,8 +12,9 @@ func _ready():
 
 func _on_Play_Button_pressed():
 	# TODO: Level selection, several tables
-	get_tree().change_scene("res://scenes/table_1.xml")
+	get_tree().change_scene("res://scenes/table_1.tscn")
 
 func _on_Quit_Button_pressed():
 	global = get_node("/root/Global")
 	get_node("/root/Global").quit()
+

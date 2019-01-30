@@ -33,3 +33,4 @@ func _on_Restart_Button_pressed():
 func _on_Main_Menu_Button_pressed():
 	global = get_node("/root/Global")
 	global.go_to_main_menu()
+

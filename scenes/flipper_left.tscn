@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/flipper_left.gd" type="Script" id=1]
+[ext_resource path="res://media/sounds/paddle.wav" type="AudioStream" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+polygon = PoolVector2Array( 0, 0, 112, 0, 112, 16, 0, 16 )
+
+[node name="Left Flipper" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.333333, 1, 0.333333, 1 )
+polygon = PoolVector2Array( 0, 0, 112, 0, 112, 16, 0, 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0, 112, 0, 112, 16, 0, 16 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
+
+[node name="SamplePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( -16, -32 )
+scale = Vector2( 144, 80 )
+action = "paddle_left"
+visibility_mode = 1
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/ball.gd" type="Script" id=1]
+[ext_resource path="res://media/images/ball.png" type="Texture" id=2]
+[ext_resource path="res://media/images/light.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Ball" type="Node2D"]
+
+z_index = -5
+script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+input_pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.25
+gravity_scale = 4.5
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+angular_velocity = 0.0
+linear_damp = -1.0
+angular_damp = -1.0
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = -1
+
+[node name="Light2D" type="Light2D" parent="RigidBody2D"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 0.5
+color = Color( 1, 1, 1, 1 )
+energy = 2.0
+mode = 0
+range_height = 1.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow_item_cull_mask = 1
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_RigidBody2D_body_enter" binds=[  ]]

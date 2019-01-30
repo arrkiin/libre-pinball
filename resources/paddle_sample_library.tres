@@ -1,0 +1,33 @@
+[gd_resource type="Resource" load_steps=1 format=2]
+
+[ext_resource path="res://media/sounds/launcher.wav" type="Sample" id=1]
+[ext_resource path="res://media/sounds/life_lost.wav" type="Sample" id=2]
+[ext_resource path="res://media/sounds/paddle.wav" type="Sample" id=3]
+[ext_resource path="res://media/sounds/score.wav" type="Sample" id=4]
+
+[resource]
+
+samples/launcher = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/life_lost = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/paddle = {
+"db": 10.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/score = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}

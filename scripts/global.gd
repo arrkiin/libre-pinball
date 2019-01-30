@@ -11,7 +11,7 @@ var lives = 3
 
 func _ready():
 	# 125 FPS physics:
-	OS.set_iterations_per_second(125)
+#	OS.set_iterations_per_second(125)
 
 	print("Libre Pinball [0.0.5]")
 	set_process_input(true)
@@ -46,6 +46,7 @@ func restart():
 	reset_game_state()
 
 func go_to_main_menu():
-	get_tree().change_scene("res://scenes/main_menu.xml")
+	get_tree().change_scene("res://scenes/main_menu.tscn")
 	resume()
 	reset_game_state()
+

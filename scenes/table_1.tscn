@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/table_1.gd" type="Script" id=1]
+[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/pause_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/flipper_left.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/flipper_right.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/bumper_small.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/launcher.tscn" type="PackedScene" id=8]
+[ext_resource path="res://media/images/background.png" type="Texture" id=9]
+[ext_resource path="res://scenes/bottom.tscn" type="PackedScene" id=10]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+polygon = PoolVector2Array( 32, 544, 0, 544, 0, 448 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+
+polygon = PoolVector2Array( 288, 544, 320, 448, 320, 544 )
+
+[node name="Table 1" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Pause Menu" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+position = Vector2( 338, 539 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="Borders" type="CollisionPolygon2D" parent="Walls"]
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( 0, 0, 0, 880, 360, 880, 360, 0 )
+
+[node name="Left Save Collision" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 32, 544, 0, 544, 0, 448 )
+
+[node name="Right Save Collision" type="CollisionPolygon2D" parent="Walls"]
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( 288, 544, 320, 448, 320, 544 )
+
+[node name="Left Save" type="Polygon2D" parent="Walls"]
+color = Color( 0.333333, 0.8, 1, 1 )
+polygon = PoolVector2Array( 0, 448, 32, 544, 0, 544 )
+
+[node name="Right Save" type="Polygon2D" parent="Walls"]
+position = Vector2( 328, 8 )
+color = Color( 0.333333, 0.8, 1, 1 )
+polygon = PoolVector2Array( -8, 440, -8, 536, -40, 536 )
+
+[node name="Corner Collision" type="CollisionPolygon2D" parent="Walls"]
+visible = false
+position = Vector2( -3.39999, 1.5 )
+polygon = PoolVector2Array( 358, 98, 358, 83, 355, 66, 351, 52, 342, 37, 334, 28, 324, 19, 313, 12, 303, 7, 293, 5, 280, 4, 268, 2, 258, 2, 258, -14, 380, -14, 380, 121, 361, 121 )
+
+[node name="Corner" type="Polygon2D" parent="Walls"]
+position = Vector2( -4, 0 )
+color = Color( 0.333333, 0.8, 1, 1 )
+polygon = PoolVector2Array( 358, 98, 358, 83, 355, 66, 351, 52, 342, 37, 334, 28, 324, 19, 313, 12, 303, 7, 293, 5, 280, 4, 268, 2, 258, 2, 258, -14, 380, -14, 380, 121, 361, 121 )
+
+[node name="Left Save Occluder" type="LightOccluder2D" parent="Walls"]
+occluder = SubResource( 1 )
+
+[node name="Right Save Occluder" type="LightOccluder2D" parent="Walls"]
+occluder = SubResource( 2 )
+
+[node name="Left Flipper" parent="." instance=ExtResource( 5 )]
+position = Vector2( 32, 544 )
+
+[node name="Right Flipper" parent="." instance=ExtResource( 6 )]
+position = Vector2( 288, 544 )
+
+[node name="Bumper 1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, 292 )
+
+[node name="Bumper 2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 232, 452 )
+
+[node name="Bumper 3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 232, 172 )
+
+[node name="Bumper 4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, 172 )
+
+[node name="Bumper 5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 232, 292 )
+
+[node name="Bumper 6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, 452 )
+
+[node name="Bumper 7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 172, 232 )
+
+[node name="Launcher" parent="." instance=ExtResource( 8 )]
+position = Vector2( 337, 547 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 180, 320 )
+scale = Vector2( 22.5, 20 )
+z_index = -10
+texture = ExtResource( 9 )
+
+[node name="Bottom" parent="." instance=ExtResource( 10 )]
+

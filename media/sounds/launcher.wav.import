@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/launcher.wav-ebda0faf7775b71bdbccc6b1b814794d.sample"
+
+[deps]
+
+source_file="res://media/sounds/launcher.wav"
+dest_files=[ "res://.import/launcher.wav-ebda0faf7775b71bdbccc6b1b814794d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/bottom.gd" type="Script" id=1]
+[ext_resource path="res://media/sounds/life_lost.wav" type="AudioStream" id=2]
+
+[node name="Bottom" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Bottom Area" type="Area2D" parent="."]
+
+[node name="Bottom Collision" type="CollisionPolygon2D" parent="Bottom Area"]
+position = Vector2( -12.8, 9.59985 )
+polygon = PoolVector2Array( 12.8, 670.4, 372.8, 670.4, 372.8, 650.4, 12.8, 650.4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="body_entered" from="Bottom Area" to="." method="_on_Bottom_Area_body_enter"]

@@ -11,9 +11,9 @@ var color_timer_increment = true
 
 func _ready():
 	
-	set_fixed_process(true)
+	set_physics_process(true)
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	# If the `color_timer` reached 1, start decrementing
 	if color_timer >= 1:
 		color_timer = 1
@@ -35,4 +35,5 @@ func _on_Area2D_body_enter(body):
 	global = get_node("/root/Global")
 	global.score += 100
 	if global.score > 0:
-		get_node("SamplePlayer").play("score")
+		$SamplePlayer.play()
+
